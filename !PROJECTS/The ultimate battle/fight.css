@@ -1,0 +1,104 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body background and base style */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Go back link */
+#backtoindex {
+  color: #ff6f61;
+  cursor: pointer;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+/* Section titles */
+#title h1 {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: #ffe600;
+}
+
+/* Turn label */
+#turn {
+  color: #00ffea;
+  font-weight: bold;
+}
+
+/* Attack info text */
+#attack_info {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-style: italic;
+}
+
+/* Main player layout */
+#players {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Player sections */
+#player1, #player2, #player1_2nd, #player2_2nd {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ffffff30;
+  border-radius: 15px;
+  padding: 20px;
+  width: 40%;
+  min-width: 280px;
+  margin-bottom: 20px;
+}
+
+/* Input and label spacing */
+input {
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3b2e;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.6);
+}
+
+/* HP display */
+#player1_hp, #player2_hp {
+  font-size: 2rem;
+  color: #00ffb3;
+  font-weight: bold;
+}
+
+/* Name labels */
+#player1_name_2nd, #player2_name_2nd {
+  color: #fff600;
+}
