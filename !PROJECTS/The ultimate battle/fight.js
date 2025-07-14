@@ -1,25 +1,33 @@
+//I am not using array and instead going with dictionary to bring more randomness in the game as well to give the option of both "causing damage" and "gaining hp" after each attack
 // let attacking_attacks = [4000, 3500, 3000, 2500, 3000];
 // let defensive_attacks = [2000, 1500, 2500, 2000, 1000];
+
+//Here are the dictinares for both attack statgies. I have tried the to keep the values as perfect as possible.
+//KEY -> damage caused to the other player
+//VALUE -> HP GAINED by the player
 let attacking_attacks = {
-  5000: 0,     // max damage, no HP gain
-  4000: 200,   // high damage, low gain
-  3500: 400,
-  3000: 600,
-  2500: 700    // low damage, better recovery
+  10000: 0,     // max damage, no HP gain
+  8000: 200,   // high damage, low gain
+  7500: 400,
+  7600: 600,
+  7000: 700,    // low damage, better recovery
 };
 let defensive_attacks = {
-  1000: 1500,   // lowest attack, highest HP gain
-  1500: 1200,
-  2000: 1000,   // only one 2000 now (no duplicate key)
-  2300: 1100,
-  2500: 1600     // highest defense hit, lowest gain
+  1000: 2000,   // lowest attack, highest HP gain
+  1500: 6000,
+  2000: 8000,   // only one 2000 now (no duplicate key)
+  2300: 6100,
+  2500: 4800,     // highest defense hit, lowest gain
 };
 
-
+//setting hp values 
 let player1_hp = 50000, player2_hp = 50000;
+
+//displaying the HP values through HTML documnet
 document.getElementById("player1_hp").textContent = player1_hp;
 document.getElementById("player2_hp").textContent = player2_hp;
 
+//RESET button; when click will reset the HP values of both the player back to deafult
 let reset;
 document.getElementById("reset").onclick = function ()
 {
@@ -30,13 +38,12 @@ document.getElementById("reset").onclick = function ()
     
 }
 
-
-let turn = "player1";
-let player1, player2;
-//let player1_choice_a, player1_choice_d, player2_choice_a, player2_choice_d;
-
+//The first player is choosen at random and displayed
+let turn = Math.random() < 0.5 ? "player1" : "player2";
 document.getElementById("turn").textContent = turn;
 
+//Getting the name of each players and displaying it
+let player1, player2;
 document.getElementById("player1_button").onclick = function ()
 {
     player1 = document.getElementById("player1_name").value;
@@ -44,7 +51,6 @@ document.getElementById("player1_button").onclick = function ()
     document.getElementById("player1_name_2nd").textContent = player1;
 
 }
-
 document.getElementById("player2_button").onclick = function () {
     player2 = document.getElementById("player2_name").value;
     document.getElementById("player2_confirm").textContent = player2;
@@ -52,10 +58,13 @@ document.getElementById("player2_button").onclick = function () {
 
 };
 
+//NOT USED!!
+//let player1_choice_a, player1_choice_d, player2_choice_a, player2_choice_d;
 // document.getElementById("player1_choice_a").onclick = player1_choice_a;
 // document.getElementById("player1_choice_d").onclick = player1_choice_d;
 // document.getElementById("player2_choice_a").onclick = player2_choice_a;
 // document.getElementById("player2_choice_d").onclick = player2_choice_d;
+
 
 //player1-attack
 document.getElementById("player1_choice_a").onclick = function () {
